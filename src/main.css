@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.back-btn {
+  @apply rounded bg-phthalo-green text-white text-lg my-4 px-4 py-1 ml-4 border-none hover:bg-forest-green transition delay-200 hover:scale-110 translate-x-3;
+}
+.view-btn {
+  @apply bg-phthalo-green text-white font-bold mb-3 mx-auto rounded-full hover:bg-forest-green hover:shadow-lg text-sm py-1 px-3 text-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300;
+}
+.recipe-att {
+  @apply bg-gray-100 shadow-sm rounded-md px-1 py-1;
+}
+.header-txt {
+  @apply  bg-phthalo-green text-white p-4 font-mono  text-xl mb-2;
+}
