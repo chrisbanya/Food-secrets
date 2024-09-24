@@ -6,10 +6,7 @@ export default function ingredientsList({ info, isLoading }) {
           <p>Loading...</p>
         ) : (
           info.extendedIngredients.map((items) => (
-            <div
-              key={items.id}
-              className="items-center justify-center "
-            >
+            <div key={items.id} className="items-center justify-center ">
               <div>
                 <img
                   className="size-13 ml-5"
@@ -21,7 +18,7 @@ export default function ingredientsList({ info, isLoading }) {
               </div>
               <div className="px-5 text-center text-lg">
                 <h3>
-                  {items.amount} {items.name} {items.unit}
+                  {items.name} {items.amount} {items.unit}
                 </h3>
               </div>
             </div>

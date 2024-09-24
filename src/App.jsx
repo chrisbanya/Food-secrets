@@ -11,7 +11,9 @@ function App() {
         <Route path="/" element={<Homepage setRecipeId={setRecipeId} />} />
         <Route
           path="/details"
-          element={<RecipeDetails recipeId={recipeId} />}
+          element={
+            <RecipeDetails recipeId={recipeId} setRecipeId={setRecipeId} />
+          }
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

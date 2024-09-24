@@ -1,7 +1,7 @@
 export default function RecipeAttributes ({info}) {
     return (
       <>
-        <h2 className="text-xl font-mono my-5">{info.title}</h2>
+        <h2 className="text-2xl text-wrap font-semibold font-mono my-5">{info.title}</h2>
         <div className="flex flex-wrap basis-10 gap-2 text-lg">
           <span className="recipe-att">
             <h3>Cooking Time: {info.readyInMinutes}mins</h3>

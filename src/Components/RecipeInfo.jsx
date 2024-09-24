@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import IngredientsList from "./IngredientsList";
 import RecipeAttributes from "./RecipeAttributes";
-export default function ({ info, isLoading }) {
+import SimiliarRecipe from "./SimiliarRecipe";
+export default function ({ info, isLoading, recipeId, setRecipeId }) {
   return (
     <>
       <Link to="/">
@@ -9,7 +10,7 @@ export default function ({ info, isLoading }) {
       </Link>
       <div className="w-5/6 mx-auto max-w-7xl">
         <div className="flex flex-col justify-center">
-          <div className="max-w-xl mx-auto px-3 rounded-md p-6 shadow-lg ">
+          <div className="max-w-xl mx-auto px-5 rounded-lg p-6 shadow-lg ">
             <img
               className="overflow-hidden rounded-sm "
               src={info.image}
@@ -36,8 +37,8 @@ export default function ({ info, isLoading }) {
             </div>
           </div>
         </div>
+        <SimiliarRecipe recipeId={recipeId} setRecipeId={setRecipeId} />
       </div>
-      {/* add similiar and random recipes later */}
     </>
   );
 }

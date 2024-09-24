@@ -7,7 +7,8 @@ module.exports = {
         "spring": '#00FF7F',
         "phthalo-green" : '#103713',
         'lite-green' : '#26B170',
-        'dark-green' : '#7ED348'
+        'dark-green' : '#7ED348',
+        "earth" : "#94716B"
 
       }
     },
