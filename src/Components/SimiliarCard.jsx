@@ -1,4 +1,5 @@
 export default function SimiliarCard({ SimiliarRecipe, setRecipeId }) {
+  console.log(SimiliarRecipe);
   return (
     <div>
       <div>
@@ -6,26 +7,28 @@ export default function SimiliarCard({ SimiliarRecipe, setRecipeId }) {
       </div>
       <div className="flex flex-wrap sm:gap-2 md:gap-6 md:justify-center gap-4 my-5 ">
         {SimiliarRecipe.length > 0 ? (
-          SimiliarRecipe.map((items) => (
-            <div key={items.id} className="flex flex-row ">
+          SimiliarRecipe.map(({ id, imageType, title }) => (
+            <div key={id} className="flex flex-row ">
               <div className="w-64 h-60 flex flex-col space-y-2 rounded-2xl shadow-lg hover:shadow-2xl ">
-                <div>
+                <div style={{ height: "125px", width: "256px" }}>
                   <img
-                    className="overflow-hidden size-15"
-                    src={`https://img.spoonacular.com/recipes/${items.id}-312x150.${items.imageType}`}
-                    alt={items.title}
+                    height="130px"
+                    width="256px"
+                    className="overflow-hidden"
+                    src={`https://img.spoonacular.com/recipes/${id}-312x150.${imageType}`}
+                    alt={title}
                   />
                 </div>
                 <div className="space-y-4">
                   <div className="card-text truncate overflow-hidden  ">
                     <span className=" truncate overflow-hidden px-1">
-                      {items.title}
+                      {title}
                     </span>
                   </div>
                   <div className="ml-24">
                     <button
                       className="view-btn"
-                      onClick={() => setRecipeId(items.id)}
+                      onClick={() => setRecipeId(id)}
                     >
                       View
                     </button>

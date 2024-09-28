@@ -4,7 +4,7 @@ import RecipeDetails from "./Pages/RecipeDetails";
 import ErrorPage from "./Pages/ErrorPage";
 import { useState } from "react";
 function App() {
-  const [recipeId, setRecipeId] = useState("658615");
+  const [recipeId, setRecipeId] = useState("");
   return (
     <BrowserRouter>
       <Routes>

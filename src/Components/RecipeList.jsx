@@ -3,7 +3,9 @@ import RecipeCard from "./RecipeCard";
 export default function RecipeList({ recipeData, setRecipeId }) {
   if (recipeData.length === 0) {
     return (
-      <p className="text-center text-lg">Please enter a search term. e.g Pizza.</p>
+      <p className="text-center text-lg">
+        Please enter a search term. e.g Pizza.
+      </p>
     );
   }
 

@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IngredientsList from "./IngredientsList";
 import RecipeAttributes from "./RecipeAttributes";
 import SimiliarRecipe from "./SimiliarRecipe";
 export default function ({ info, isLoading, recipeId, setRecipeId }) {
+  const navigateBack = useNavigate();
+  function handleBackToHome() {
+    navigateBack("/");
+  }
   return (
     <>
-      <Link to="/">
-        <button className="back-btn">Back</button>
-      </Link>
+      <button className="back-btn" onClick={handleBackToHome}>
+        Back
+      </button>
       <div className="w-5/6 mx-auto max-w-7xl">
         <div className="flex flex-col justify-center">
           <div className="max-w-xl mx-auto px-5 rounded-lg p-6 shadow-lg ">

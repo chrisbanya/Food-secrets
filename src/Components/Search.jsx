@@ -5,30 +5,26 @@ const URL = "https://api.spoonacular.com/recipes/complexSearch";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function Search({ setRecipeData }) {
-  const [query, setQuery] = useState(""); 
+  const [query, setQuery] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const debouncedFetchRecipe =
-      debounce(async () => {
-        if (query === "" || query.trim() === "") {
-          setRecipeData([]);
-          return;
+    const debouncedFetchRecipe = debounce(async () => {
+      if (query === "" || query.trim() === "") {
+        setRecipeData([]);
+        return;
+      }
+      try {
+        const res = await fetch(`${URL}?query=${query}&apiKey=${apiKey}`);
+        if (!res.ok) {
+          throw new Error("Failed to fetch recipes. Please try again later.");
         }
-        try {
-          const res = await fetch(`${URL}?query=${query}&apiKey=${apiKey}`);
-          if (!res.ok) {
-            throw new Error(
-              "Failed to fetch recipe information. Please try again later."
-            );
-          }
-          const data = await res.json();
-          setRecipeData(data.results);
-        } catch (error) {
-          setError(error.message);
-        }
-      },
-      300);
+        const data = await res.json();
+        setRecipeData(data.results);
+      } catch (error) {
+        setError(error.message);
+      }
+    }, 300);
     debouncedFetchRecipe();
     return () => {
       debouncedFetchRecipe.cancel();
@@ -36,8 +32,8 @@ export default function Search({ setRecipeData }) {
   }, [query]);
 
   if (error) {
-   alert(error);
-   setError(null);
+    alert(error);
+    setError(null);
   }
 
   return (
