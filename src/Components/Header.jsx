@@ -3,7 +3,7 @@ export default function Header() {
     <div>
       <h1 className="header-txt flex items-center">
         <img
-          src="./public/food-secrets-favicon-color.png"
+          src="/food-secrets-favicon-color.png"
           alt="logo"
           className="inline-flex size-9"
         />
