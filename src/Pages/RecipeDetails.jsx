@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import RecipeInfo from "../Components/RecipeInfo";
 import Header from "../Components/Header";
+import { useParams } from "react-router-dom";
 
-export default function RecipeDetails({ recipeId, setRecipeId }) {
+export default function RecipeDetails() {
   const [info, setInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { recipeId } = useParams();
   const InfoURL = `https://api.spoonacular.com/recipes/${recipeId}/information`;
   const apiKEY = import.meta.env.VITE_API_KEY;
 
@@ -36,12 +38,7 @@ export default function RecipeDetails({ recipeId, setRecipeId }) {
       {error && <p className="text-center my-14 text-lg ">Error: {error}</p>}
       {!isLoading && !error && (
         <div key={info.id}>
-          <RecipeInfo
-            info={info}
-            isLoading={isLoading}
-            recipeId={recipeId}
-            setRecipeId={setRecipeId}
-          />
+          <RecipeInfo info={info} isLoading={isLoading} recipeId={recipeId} />
         </div>
       )}
     </div>
