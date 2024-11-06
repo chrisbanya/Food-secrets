@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SimiliarCard from "./SimiliarCard";
 
-export default function SimiliarRecipe({ recipeId, setRecipeId }) {
+export default function SimiliarRecipe({ recipeId }) {
   const [SimiliarRecipe, setSimiliarRecipe] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const endPoint = `https://api.spoonacular.com/recipes/${recipeId}/similar`;
@@ -23,7 +23,7 @@ export default function SimiliarRecipe({ recipeId, setRecipeId }) {
       ) : (
         <SimiliarCard
           SimiliarRecipe={SimiliarRecipe}
-          setRecipeId={setRecipeId}
+      
         />
       )}
     </>

@@ -1,6 +1,6 @@
 import RecipeCard from "./RecipeCard";
 
-export default function RecipeList({ recipeData, setRecipeId }) {
+export default function RecipeList({ recipeData }) {
   if (recipeData.length === 0) {
     return (
       <p className="text-center text-lg">
@@ -14,7 +14,7 @@ export default function RecipeList({ recipeData, setRecipeId }) {
       <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-3">
         {recipeData.map((items) => (
           <div key={items.id} className="justify-self-stretch">
-            <RecipeCard items={items} setRecipeId={setRecipeId} />
+            <RecipeCard items={items} />
           </div>
         ))}
       </div>
