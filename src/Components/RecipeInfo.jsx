@@ -2,7 +2,7 @@ import {  useNavigate } from "react-router-dom";
 import IngredientsList from "./IngredientsList";
 import RecipeAttributes from "./RecipeAttributes";
 import SimiliarRecipe from "./SimiliarRecipe";
-export default function ({ info, isLoading, recipeId, setRecipeId }) {
+export default function ({ info, isLoading, recipeId }) {
   const navigateBack = useNavigate();
   function handleBackToHome() {
     navigateBack("/");
@@ -41,7 +41,7 @@ export default function ({ info, isLoading, recipeId, setRecipeId }) {
             </div>
           </div>
         </div>
-        <SimiliarRecipe recipeId={recipeId} setRecipeId={setRecipeId} />
+        <SimiliarRecipe recipeId={recipeId} />
       </div>
     </>
   );
