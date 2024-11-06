@@ -1,5 +1,8 @@
-export default function SimiliarCard({ SimiliarRecipe, setRecipeId }) {
-  console.log(SimiliarRecipe);
+import { useNavigate } from "react-router-dom";
+
+export default function SimiliarCard({ SimiliarRecipe }) {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div>
@@ -28,7 +31,7 @@ export default function SimiliarCard({ SimiliarRecipe, setRecipeId }) {
                   <div className="ml-24">
                     <button
                       className="view-btn"
-                      onClick={() => setRecipeId(id)}
+                      onClick={() => navigate(`/details/${id}`)}
                     >
                       View
                     </button>

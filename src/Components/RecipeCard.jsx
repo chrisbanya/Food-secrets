@@ -1,11 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-export default function RecipeCard({ items, setRecipeId }) {
+export default function RecipeCard({ items }) {
   const navigate = useNavigate();
   function handleView() {
-    setRecipeId(items.id);
-
-    navigate("/details");
+    navigate(`/details/${items.id}`);
   }
   return (
     <div className="cardContainer">
