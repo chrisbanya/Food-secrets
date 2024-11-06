@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import IngredientsList from "./IngredientsList";
 import RecipeAttributes from "./RecipeAttributes";
 import SimiliarRecipe from "./SimiliarRecipe";
@@ -32,11 +32,11 @@ export default function ({ info, isLoading, recipeId, setRecipeId }) {
               <ol className="list-decimal leading-relaxed text-lg">
                 {isLoading ? (
                   <h2>Loading...</h2>
-                ) : (
+                ) : info.analyzedInstructions?.[0]?.steps?.length > 0 ? (
                   info.analyzedInstructions[0].steps.map((items) => (
                     <li key={items.number}>{items.step}</li>
                   ))
-                )}
+                ) : <p>Oops! No Instructions available for this recipe</p>}
               </ol>
             </div>
           </div>
